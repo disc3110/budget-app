@@ -51,6 +51,7 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'cancancan'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 group :development, :test do
