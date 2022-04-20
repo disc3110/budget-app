@@ -1,2 +1,35 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+:root {
+  --blue: #3778c2;
+  --white: #fff;
+  --green: #5fb523;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  
+}
+
+.main {
+  background-color: #f5f6f8;
+}
+
+.application {
+  background-color: var(--blue);
+}
+
+.green-text {
+  color: var(--green);
+}

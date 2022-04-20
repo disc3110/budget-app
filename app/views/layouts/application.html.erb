@@ -10,8 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class=<%= params[:controller] === "application" ? "application" : "main" %>>
     <%= disp_alerts %>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
