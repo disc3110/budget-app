@@ -17,6 +17,11 @@
   font-family: 'Outfit', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -33,4 +38,8 @@ body {
 
 .green-text {
   color: var(--green);
+}
+
+.h-80vh {
+  height: 80vh;
 }
