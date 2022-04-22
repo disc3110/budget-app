@@ -5,6 +5,7 @@
   --blue: #3778c2;
   --white: #fff;
   --green: #5fb523;
+  --grey: #434b54;
 }
 
 * {
@@ -19,7 +20,7 @@
 body {
   margin: 0;
   height: 100%;
-  
+  color: var(--grey) ;
 }
 
 .main {
