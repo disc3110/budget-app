@@ -6,4 +6,10 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :icon, presence: true
 
+  def expenses
+    total = 0
+    deals.each { |deal| total += deal.amount }
+    total
+  end
+
 end

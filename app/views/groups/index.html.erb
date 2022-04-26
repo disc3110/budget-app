@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<h2 class="d-flex justify-content-between px-4 py-4 mb-4 bg-white">
+    <span >Total expended: </span>
+    <span class="fw-bold text-third">$<%= @total %></span>
+</h2>
 
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
+<div class="container" id="groups">
+  <% @groups.includes(:deals).each do |group| %>
+    <%= link_to group do %>
     <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<div class="category_btn_cnt">
+<%= link_to 'New Category', new_group_path, class:"category_btn" %>
+</div>
+
