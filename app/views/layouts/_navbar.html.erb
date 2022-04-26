@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-blue">
+  <div class="d-flex justify-content-between w-100">
+    <div>a</div>
+    <div>b</div>
+    <div>
+      <ul class="d-flex gap-2 m-0">
+      <% if user_signed_in? %>
+         <li class="nav-item"><%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger text-white" %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %></li>
+      <% end %>
+    </div>
+  </div>
+</nav>
