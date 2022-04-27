@@ -11,17 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <%= form.text_field :name, class:'form-field', placeholder:'Name' %>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
+    <%= form.text_field :icon, class:'form-field', placeholder:'Icon Link' %>
 
-  <div>
-    <%= form.submit %>
+  <div class="category_btn_cnt">
+    <%= form.submit 'Create Category', class:"category_btn" %>
   </div>
+  
 <% end %>
