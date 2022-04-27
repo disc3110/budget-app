@@ -12,6 +12,7 @@ class DealsController < ApplicationController
 
   # GET /deals/new
   def new
+    @category = params[:category]
     @deal = Deal.new
   end
 
@@ -21,7 +22,8 @@ class DealsController < ApplicationController
 
   # POST /deals or /deals.json
   def create
-    @deal = Deal.new(deal_params)
+    p params
+    @deal = current_user.deals.new(deal_params)
 
     respond_to do |format|
       if @deal.save
@@ -65,6 +67,6 @@ class DealsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def deal_params
-      params.require(:deal).permit(:author_id, :name, :amount)
+      params.require(:deal).permit( :name, :amount, :group)
     end
 end

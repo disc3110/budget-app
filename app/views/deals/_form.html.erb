@@ -11,22 +11,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
+  <%= form.text_field :name, class:'form-field', placeholder:'Name' %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <%= form.text_field :amount, class:'form-field', placeholder:'Amount' %>
+  
+  <%= form.text_field :group, :value => @category, class: 'd-none' %>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="category_btn_cnt">
+    <%= form.submit 'Add Transaction', class:"category_btn" %>
   </div>
 <% end %>
