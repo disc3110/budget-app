@@ -10,6 +10,8 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @group = Group.find(params[:id])
+    @deals = @group.deals.order(created_at: :desc)
   end
 
   # GET /groups/new
