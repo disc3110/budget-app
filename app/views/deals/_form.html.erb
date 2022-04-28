@@ -1,4 +1,4 @@
-<%= form_with(model: deal) do |form| %>
+<%= form_with(model: [@group, @deal]) do |form| %>
   <% if deal.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
@@ -14,8 +14,6 @@
   <%= form.text_field :name, class:'form-field', placeholder:'Name' %>
 
   <%= form.text_field :amount, class:'form-field', placeholder:'Amount' %>
-  
-  <%= form.text_field :group, :value => @category, class: 'd-none' %>
 
   <div class="category_btn_cnt">
     <%= form.submit 'Add Transaction', class:"category_btn" %>

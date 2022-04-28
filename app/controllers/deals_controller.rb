@@ -1,14 +1,8 @@
 class DealsController < ApplicationController
   before_action :set_deal, only: %i[ show edit update destroy ]
-
-  # GET /deals or /deals.json
-  def index
-    @deals = Deal.all
-  end
-
-  # GET /deals/1 or /deals/1.json
-  def show
-  end
+  before_action :set_group, only: %i[new edit create index]
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /deals/new
   def new
@@ -16,18 +10,14 @@ class DealsController < ApplicationController
     @deal = Deal.new
   end
 
-  # GET /deals/1/edit
-  def edit
-  end
-
   # POST /deals or /deals.json
   def create
-    p params
-    @deal = current_user.deals.new(deal_params)
+    p @group
+    @deal = @group.deals.create(deal_params)
 
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to deal_url(@deal), notice: "Deal was successfully created." }
+        format.html { redirect_to group_path(@group), notice: "Deal was successfully created." }
         format.json { render :show, status: :created, location: @deal }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,37 +26,18 @@ class DealsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /deals/1 or /deals/1.json
-  def update
-    respond_to do |format|
-      if @deal.update(deal_params)
-        format.html { redirect_to deal_url(@deal), notice: "Deal was successfully updated." }
-        format.json { render :show, status: :ok, location: @deal }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @deal.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /deals/1 or /deals/1.json
-  def destroy
-    @deal.destroy
-
-    respond_to do |format|
-      format.html { redirect_to deals_url, notice: "Deal was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_deal
       @deal = Deal.find(params[:id])
     end
+  
+    def set_group
+      @group = Group.find(params[:group_id])
+    end
 
-    # Only allow a list of trusted parameters through.
     def deal_params
-      params.require(:deal).permit( :name, :amount, :group)
+      params.require(:deal).permit( :name, :amount).merge(user_id: current_user.id)
     end
 end

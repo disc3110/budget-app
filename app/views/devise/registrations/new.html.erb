@@ -21,7 +21,8 @@
 
     <div class="actions d-flex flex-column align-items-center">
       <%= f.submit "SIGN UP",
-      class: 'border p-2 bg-blue text-light w-50 my-1' %>
+      class: 'border p-2 bg-blue text-light w-50 my-1',
+      data: { turbo: false } %>
       <%= render "devise/shared/links" %>
   <% end %>
 
