@@ -15,6 +15,14 @@
 
   <%= form.text_field :amount, class:'form-field', placeholder:'Amount' %>
 
+  <%= form.label :categories %>
+  <div class='p-2'>
+  <% Group.all.each do |category| %>
+    <%= check_box_tag "category_ids[]", category.id %>
+    <%=h category.name%>
+  <% end %>
+  </div>
+
   <div class="category_btn_cnt">
     <%= form.submit 'Add Transaction', class:"category_btn" %>
   </div>

@@ -14,7 +14,7 @@ class DealsController < ApplicationController
 
   # POST /deals or /deals.json
   def create
-    p @group
+    @categories = params[:category_ids]
     @deal = @group.deals.create(deal_params)
 
     respond_to do |format|
@@ -41,5 +41,9 @@ class DealsController < ApplicationController
 
   def deal_params
     params.require(:deal).permit(:name, :amount).merge(user_id: current_user.id)
+  end
+
+  def group_params
+    params.require(:deal).permit(:category_ids)
   end
 end
