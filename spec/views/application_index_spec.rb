@@ -9,7 +9,7 @@ RSpec.describe 'Splash screen', type: :feature do
       expect(page).to have_content('LOG IN')
       expect(page).to have_content('SIGN UP')
       click_on 'LOG IN'
-      assert_current_path("/users/sign_in")
+      assert_current_path('/users/sign_in')
     end
   end
 end

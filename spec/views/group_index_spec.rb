@@ -19,7 +19,5 @@ RSpec.describe 'Log In', type: :feature do
       expect(page).to have_content('Total expended: $190.5')
       expect(page).to have_content('Categories')
     end
-
-    
   end
 end
