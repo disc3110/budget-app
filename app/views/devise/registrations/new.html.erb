@@ -1,0 +1,30 @@
+<div class="bg-white my-4">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    
+      <%= f.text_field :name, autofocus: true, class:'form-field', placeholder: 'Name' %>
+
+    
+      <%= f.text_field :last_name, class:'form-field', placeholder: 'Last Name' %>
+    
+    
+      <%= f.email_field :email, class:'form-field', autocomplete: "email", placeholder: 'Email' %>
+
+    
+      <%= f.password_field :password, class:'form-field', autocomplete: "new-password", placeholder: 'Password' %>
+
+    
+      <%= f.password_field :password_confirmation, class:'form-field', autocomplete: "new-password", placeholder: 'Password Confirmation' %>
+
+
+    <div class="actions d-flex flex-column align-items-center">
+      <%= f.submit "SIGN UP",
+      class: 'border p-2 bg-blue text-light w-50 my-1',
+      data: { turbo: false } %>
+      <%= render "devise/shared/links" %>
+  <% end %>
+
+</div>
+

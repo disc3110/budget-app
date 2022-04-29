@@ -1,0 +1,29 @@
+<%= form_with(model: [@group, @deal]) do |form| %>
+  <% if deal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+        <% deal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :name, class:'form-field', placeholder:'Name' %>
+
+  <%= form.text_field :amount, class:'form-field', placeholder:'Amount' %>
+
+  <%= form.label :categories %>
+  <div class='p-2'>
+  <% Group.all.each do |category| %>
+    <%= check_box_tag "category_ids[]", category.id %>
+    <%=h category.name%>
+  <% end %>
+  </div>
+
+  <div class="category_btn_cnt">
+    <%= form.submit 'Add Transaction', class:"category_btn" %>
+  </div>
+<% end %>

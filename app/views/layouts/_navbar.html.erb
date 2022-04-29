@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-blue">
+  <div class="d-flex justify-content-around align-items-center w-100 p-2">
+    <div class="w-25">
+      <% if @previous_path %>
+        <%= link_to @previous_path, class: "absolute left-4" do %>
+          <img src='https://www.svgrepo.com/show/932/left-arrow.svg' alt='<' class='text-uppercase fs-6 text-white w-25'>
+        <% end %>
+      <% end %>
+    </div>
+    <div class=" flex-grow-2">
+      <% if @title %>
+        <p class="text-uppercase fs-6 m-auto text-white"> <%= @title %> </p>
+      <% end %>
+    </div>
+    <div class="w-25 d-flex justify-content-end">
+      <% if user_signed_in? %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-uppercase fs-6 text-white p-0 m-0" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "text-uppercase fs-5 text-white" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
