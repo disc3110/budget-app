@@ -11,5 +11,4 @@ class Group < ApplicationRecord
     deals.each { |deal| total += deal.amount }
     total
   end
-
 end

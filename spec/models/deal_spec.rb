@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Deal, type: :model do
   before :each do
-    @deal = Deal.new(name: 'drill', amount: 35  , user_id: 1)
+    @deal = Deal.new(name: 'drill', amount: 35, user_id: 1)
   end
   it 'deal should be valid with correct parameters' do
     expect(@deal).to be_valid

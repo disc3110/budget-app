@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  def index
-  end
+  def index; end
 
   protected
 
