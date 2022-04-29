@@ -1,7 +1,8 @@
 <div class="m-2 bg-white border d-flex justify-content-between p-2" id="<%= dom_id deal %>">
-  <p>
-    <%= deal.name %>
-  </p>
+  <div class="d-flex flex-column justify-content-between">
+    <p><%= deal.name %></p>
+    <p class="fs-075r"><%= deal.created_at.strftime("%d %b %Y")%></p>
+  </div>
 
   <p>
     <%= deal.amount %>
