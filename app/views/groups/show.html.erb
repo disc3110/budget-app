@@ -1,0 +1,15 @@
+<h2 class="d-flex justify-content-between px-4 py-4 mb-4 bg-white">
+  <span class="">Total on <%= @group.name %>: </span>
+  <span class="fw-bold">$<%= @group.expenses %></span>
+</h2>
+
+<div class="flex flex-col gap-3 px-4">
+  <% @deals.each do |deal| %>
+    <%= render deal %>
+  <% end %>
+</div>
+
+<div class="category_btn_cnt">
+<%= link_to 'New Transaction', new_group_deal_path(@group), class:"category_btn" %>
+</div>
+

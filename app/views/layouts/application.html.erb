@@ -10,7 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class = "main">
+    <%= render 'layouts/navbar'%>
+    <%= disp_alerts %>
+    <div class="">
     <%= yield %>
+    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Outfit:wght@100;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3410ed71d0.js" crossorigin="anonymous"></script>
   </body>
 </html>

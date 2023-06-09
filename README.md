@@ -1,24 +1,41 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Budgery 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Budgery is an app that keep track of your expenses. It allows you to create categories that contains transactions and display the sum of total transactions in each group.
 
-Things you may want to cover:
+[LIVE VERSION](https://ancient-hollows-57673.herokuapp.com)
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
+- Devise
 
-* Configuration
+## To get a local copy up and running follow these simple steps:
 
-* Database creation
+1. Clone it using git command `git clone git@github.com:disc3110/budget-app.git`.
+2. Go to the folder `cd budget-app`.
+3. Run `bundle install` on your console.
+4. Run `rails db:migrate` on your console.
+5. To see the live preview run `rails s` in your console and go to `http://localhost:3000/` in your browser.
+6. To run the tests run the command `rspec` in your console.
 
-* Database initialization
+## Authors
 
-* How to run the test suite
+🧑‍💻 **Diego Solis**
 
-* Services (job queues, cache servers, search engines, etc.)
+- GitHub: [@disc3110](https://github.com/disc3110)
+- LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
 
-* Deployment instructions
+## Acknowledgments
 
-* ...
+- [Grégoire Vella](https://www.behance.net/gregoirevella) for the design.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
